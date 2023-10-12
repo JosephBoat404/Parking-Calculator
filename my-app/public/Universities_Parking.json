@@ -1,0 +1,43 @@
+{
+  "universities": [
+    {
+      "name": "Montclair State University",
+      "Permit_Is_Required": false,
+      "parkingRates": [
+        { "hours": 0, "rate": 0 },
+        { "hours": 1, "rate": 2 },
+        { "hours": 2, "rate": 4 },
+        { "hours": 6, "rate": 8 },
+        { "hours": 8, "rate": 10 },
+        { "hours": "default", "rate": 12 }
+      ],
+      "permitAmount": 260
+    },
+    {
+      "name": "Rutgers Newark",
+      "Permit_Is_Required": false,
+      "parkingRates": [
+        { "hours": 0, "rate": 0 },
+        { "hours": 1, "rate": 1.5 },
+        { "hours": 2, "rate": 3 },
+        { "hours": 6, "rate": 6 },
+        { "hours": 8, "rate": 8 },
+        { "hours": "default", "rate": 10 }
+      ],
+      "permitAmount": 20
+    },
+    {
+      "name": "New Jersey Institute of Technology",
+      "Permit_Is_Required": true,
+      "parkingRates": [
+        { "hours": 0, "rate": 0 },
+        { "hours": 0, "rate": 0 },
+        { "hours": 0, "rate": 0 },
+        { "hours": 0, "rate": 0 },
+        { "hours": 0, "rate": 0 },
+        { "hours": "default", "rate": 0 }
+      ],
+      "permitAmount": 194
+    }
+  ]
+}

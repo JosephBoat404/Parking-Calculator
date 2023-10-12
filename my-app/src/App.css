@@ -1,0 +1,87 @@
+body{
+    background-color: #001220;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 10vh;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: none;
+
+}
+
+
+  
+
+.fbc{
+    background: linear-gradient(180deg, rgba(245, 245, 245, 0.15) 7.37%, #001220 23.28%);
+}
+
+
+.btn-outline-light{
+    border-color: #FFFFFF !important;
+    color: #FFFFFF !important;
+    background: none !important;
+}
+.btn:hover{
+    background: none !important;
+    
+    
+}
+
+.navbar-toggler{
+    border:2px solid #001220 !important;
+}
+.navbar-expand-lg{
+    background: #D51E3A  !important;
+}
+
+.nav-link{
+    color: #FFFFFF !important;
+}
+
+
+.nav-link:hover{
+    text-decoration: underline;
+}
+
+.cb{
+    background: #FFFFFF;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+
+
+.lc{
+    color: #FFFFFF;
+}
+
+.formColor{
+    /* border-radius: 10px; */
+    min-width: 100px;
+    border: 1px solid;
+    text-align: center;
+    background-color: #D51E3A;
+    color: black;
+    transition: transform 0.3s; /* Animation */
+}
+
+label{
+    color: black;
+}
+
+.formColor:hover {
+    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+  
+  
