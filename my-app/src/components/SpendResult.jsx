@@ -24,20 +24,40 @@ function SpendResult({
         </div>
         <div className="row">
           <div className="col justify-content-center d-flex">
-            <label>{totalHours}hr</label>
+            <label className="moneyUi">{totalHours}hr</label>
           </div>
 
           <div className="col justify-content-center d-flex">
-            <label>${totalMoneyToPay}</label>
+            <label className="moneyUi">${totalMoneyToPay}</label>
           </div>
 
           <div className="col justify-content-center d-flex">
-            <label>${totalCostForSemester}</label>
+            <label className="moneyUi">${totalCostForSemester}</label>
           </div>
 
           <div className="col justify-content-center d-flex">
-            <label>{Worth}</label>
+            <label className="moneyUi">{Worth}</label>
           </div>
+          
+        </div>
+
+        <div className="row">
+          <div className="col justify-content-center d-flex">
+            <label className="moneyUi">{totalHours}hr</label>
+          </div>
+
+          <div className="col justify-content-center d-flex">
+            <label className="moneyUi">${totalMoneyToPay}</label>
+          </div>
+
+          <div className="col justify-content-center d-flex">
+            <label className="moneyUi">${totalCostForSemester}</label>
+          </div>
+
+          <div className="col justify-content-center d-flex">
+            <label className="moneyUi">{Worth}</label>
+          </div>
+          
         </div>
       </div>
     </>

@@ -40,7 +40,7 @@ body{
 
 
 .nav-link:hover{
-    text-decoration: underline;
+    opacity: 0.6;
 }
 
 .cb{
@@ -50,7 +50,7 @@ body{
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
+   margin: 0;
 }
 
 /* Firefox */
@@ -73,6 +73,7 @@ input[type=number] {
     background-color: #D51E3A;
     color: black;
     transition: transform 0.3s; /* Animation */
+    
 }
 
 label{
@@ -83,5 +84,12 @@ label{
     transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-  
-  
+.moneyUi {
+    font-weight: 600;
+}
+input::placeholder {
+    color: black;
+}
+input:focus::placeholder {
+    opacity: 0;
+}

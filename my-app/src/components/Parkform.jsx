@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
+
 import Navbar from "./Navbar";
 import DayInput from "./DayInput";
 import SpendResult from "./SpendResult";
@@ -7,13 +9,14 @@ import Footer from "./Footer";
 function Parkform() {
   // Initialize state for each day and additional hours
   const [days, setDays] = useState({
-    monday: 0,
-    tuesday: 0,
-    wednesday: 0,
-    thursday: 0,
-    friday: 0,
-    additionalHours: 0,
+    monday: "",
+    tuesday: "",
+    wednesday: "",
+    thursday: "",
+    friday: "",
+    additionalHours: "",
   });
+  
   
   const [worth, setWorth] = useState("Yes");
 
@@ -62,16 +65,23 @@ function Parkform() {
          </div>
        </div>
 
-       {Object.keys(days).map(day => (
-         <DayInput
-           key={day}
-           label={day.charAt(0).toUpperCase() + day.slice(1)}
-           hours={days[day]}
-           onChange={handleChange}
-           name={day}
-           fee={calculateFee(days[day])}
-         />
-       ))}
+      {Object.keys(days).map((day) => (
+        <motion.div
+          key={day}
+          initial={{ y: 70, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <DayInput
+            label={day.charAt(0).toUpperCase() + day.slice(1)}
+            hours={days[day]}
+            onChange={handleChange}
+            name={day}
+            fee={calculateFee(days[day])}
+          />
+        </motion.div>
+      ))}
+
 
        <SpendResult
          Worth={worth}

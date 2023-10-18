@@ -1,5 +1,8 @@
 import React from "react";
-
+import icon from "../Icons/Addparking.svg";
+import home from "../Icons/home.svg";
+import semestericon from "../Icons/semester.svg"
+import Parkingicon from "../Icons/parkingicon.svg"
 
 function Navbar() {
   return (
@@ -23,42 +26,64 @@ function Navbar() {
                 className="nav-link active"
                 aria-current="page"
                 href="index.html"
+                style={{ display: "flex", alignItems: "center" }}
               >
+                <img
+                  src={home}
+                  alt="Home"
+                  style={{ marginRight: "8px", marginBottom: "5px" }}
+                />
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href="https://www.montclair.edu/academics/academic-calendar/"
-                target="_blank"
+            <a
+                className="nav-link active"
+                aria-current="page"
+                href="index.html"
+                style={{ display: "flex", alignItems: "center" }}
               >
+                <img
+                  src={semestericon}
+                  alt="Home"
+                  style={{ marginRight: "8px", marginBottom: "5px" }}
+                />
                 Semester
               </a>
             </li>
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href="https://www.montclair.edu/facilities/our-services/parking-services/parking-rates-and-fees/"
-                target="_blank"
+            <a
+                className="nav-link active"
+                aria-current="page"
+                href="index.html"
+                style={{ display: "flex", alignItems: "center" }}
               >
+                <img
+                  src={Parkingicon}
+                  alt="Home"
+                  style={{ marginRight: "8px", marginBottom: "5px" }}
+                />
                 Parking Rate
               </a>
             </li>
 
-
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#"
-                target="_blank"
+            <a
+                className="nav-link active"
+                aria-current="page"
+                href="index.html"
+                style={{ display: "flex", alignItems: "center" }}
               >
-                Edit Rate 
+                <img
+                  src={icon}
+                  alt="Home"
+                  style={{ marginRight: "8px", marginBottom: "5px" }}
+                />
+                Edit Rate
               </a>
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
   );
