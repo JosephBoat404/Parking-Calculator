@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { motion } from 'framer-motion';
 
 import Navbar from "./Navbar";
 import DayInput from "./DayInput";
@@ -18,7 +17,8 @@ function Parkform() {
   });
   
   
-  const [worth, setWorth] = useState("Yes");
+  const [worth, setWorth] = useState("No");
+  const [savings, setSavings] = useState(0);
 
   // Calculate parking fee based on hours
   const calculateFee = (hours) => {
@@ -37,10 +37,15 @@ function Parkform() {
   const PermitAmount=260;
   const numberOfWeeksInSemester = 16;
   const totalCostForSemester = totalMoneyToPay * numberOfWeeksInSemester;
+  let savingsAmount=0;
+
+
+
 
   // Update worth based on total cost for semester
   useEffect(() => {
     setWorth(totalCostForSemester < PermitAmount ? "No" : "Yes");
+    setSavings(totalCostForSemester ===0 ? 0 : savingsAmount=Math.max(0, PermitAmount - totalCostForSemester));
   }, [totalCostForSemester]);
 
   
@@ -66,11 +71,7 @@ function Parkform() {
        </div>
 
       {Object.keys(days).map((day) => (
-        <motion.div
-          key={day}
-          initial={{ y: 70, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
+        <div key={day}
         >
           <DayInput
             label={day.charAt(0).toUpperCase() + day.slice(1)}
@@ -79,7 +80,7 @@ function Parkform() {
             name={day}
             fee={calculateFee(days[day])}
           />
-        </motion.div>
+        </div>
       ))}
 
 
@@ -89,6 +90,7 @@ function Parkform() {
          totalMoneyToPay={totalMoneyToPay}
          totalCostForSemester={totalCostForSemester}
          PermitAmount={PermitAmount}
+         savingsAmount={savings}
        />
 
        <Footer />

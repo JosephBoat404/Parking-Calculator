@@ -1,8 +1,5 @@
 import React from "react";
 import icon from "../Icons/Addparking.svg";
-import home from "../Icons/home.svg";
-import semestericon from "../Icons/semester.svg"
-import Parkingicon from "../Icons/parkingicon.svg"
 
 function Navbar() {
   return (
@@ -28,62 +25,40 @@ function Navbar() {
                 href="index.html"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <img
-                  src={home}
-                  alt="Home"
-                  style={{ marginRight: "8px", marginBottom: "5px" }}
-                />
                 Home
               </a>
             </li>
             <li className="nav-item">
-            <a
+              <a
                 className="nav-link active"
                 aria-current="page"
                 href="index.html"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <img
-                  src={semestericon}
-                  alt="Home"
-                  style={{ marginRight: "8px", marginBottom: "5px" }}
-                />
                 Semester
               </a>
             </li>
             <li className="nav-item">
-            <a
+              <a
                 className="nav-link active"
                 aria-current="page"
                 href="index.html"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <img
-                  src={Parkingicon}
-                  alt="Home"
-                  style={{ marginRight: "8px", marginBottom: "5px" }}
-                />
                 Parking Rate
-              </a>
-            </li>
-
-            <li className="nav-item">
-            <a
-                className="nav-link active"
-                aria-current="page"
-                href="index.html"
-                style={{ display: "flex", alignItems: "center" }}
-              >
-                <img
-                  src={icon}
-                  alt="Home"
-                  style={{ marginRight: "8px", marginBottom: "5px" }}
-                />
-                Edit Rate
               </a>
             </li>
           </ul>
         </div>
+        <button className="btn btn-outline-light ml-auto editbtn">
+          
+          <img
+            src={icon}
+            alt="Edit"
+            style={{ marginRight: "8px", marginBottom: "5px" }}
+          />
+          Edit Rate
+        </button>
       </div>
     </nav>
   );

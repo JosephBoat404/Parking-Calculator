@@ -6,61 +6,48 @@ function SpendResult({
   totalCostForSemester,
   Worth,
   PermitAmount,
+  savingsAmount
 }) {
   return (
-    <>
-      <div className="container  rounded shadow-sm p-3 mb-4 bg-primary-subtle border border-primary-subtle">
-        <div className="row">
-          <div className="col  justify-content-center d-flex ">
-            Weekly Hours
-          </div>
-          <div className="col  justify-content-center d-flex ">Weekly Pay</div>
-          <div className="col  justify-content-center d-flex ">
-            Semester Pay
-          </div>
-          <div className="col  justify-content-center d-flex ">
-            Get the ${PermitAmount} Permit?
-          </div>
-        </div>
-        <div className="row">
-          <div className="col justify-content-center d-flex">
-            <label className="moneyUi">{totalHours}hr</label>
-          </div>
+    <div className="container rounded shadow-sm p-3 mb-4 bg-primary-subtle">
+      <table className="table table-primary table-hover">
+        <tbody>
+          <tr>
+            <th className="text-center adjfont" >Weekly Hours</th>
+            <td className="text-center" >
+              <label>{totalHours}hr</label>
+            </td>
+          </tr>
+          <tr>
+            <th className="text-center adjfont" >Weekly Pay</th>
+            <td className="text-center" >
+              <label>${totalMoneyToPay}</label>
+            </td>
+          </tr>
+          <tr>
+            <th className="text-center adjfont" >Semester Pay</th>
+            <td className="text-center" >
+              <label>${totalCostForSemester}</label>
+            </td>
+          </tr>
 
-          <div className="col justify-content-center d-flex">
-            <label className="moneyUi">${totalMoneyToPay}</label>
-          </div>
 
-          <div className="col justify-content-center d-flex">
-            <label className="moneyUi">${totalCostForSemester}</label>
-          </div>
+          <tr>
+            <th className="text-center adjfont" >Saving</th>
+            <td className="text-center" >
+              <label>${savingsAmount}</label>
+            </td>
+          </tr>
 
-          <div className="col justify-content-center d-flex">
-            <label className="moneyUi">{Worth}</label>
-          </div>
-          
-        </div>
-
-        <div className="row">
-          <div className="col justify-content-center d-flex">
-            <label className="moneyUi">{totalHours}hr</label>
-          </div>
-
-          <div className="col justify-content-center d-flex">
-            <label className="moneyUi">${totalMoneyToPay}</label>
-          </div>
-
-          <div className="col justify-content-center d-flex">
-            <label className="moneyUi">${totalCostForSemester}</label>
-          </div>
-
-          <div className="col justify-content-center d-flex">
-            <label className="moneyUi">{Worth}</label>
-          </div>
-          
-        </div>
-      </div>
-    </>
+          <tr>
+            <th className="text-center moneyUi" >Get the <span className="AmountIndic">${PermitAmount}</span> Permit?</th>
+            <td className="text-center" >
+              <label className="moneyUi">{Worth}</label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 }
 

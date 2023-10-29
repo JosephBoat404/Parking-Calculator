@@ -42,7 +42,9 @@ body{
 .nav-link:hover{
     opacity: 0.6;
 }
-
+.editbtn:hover{
+    opacity: 0.6;
+}
 .cb{
     background: #FFFFFF;
 }
@@ -80,12 +82,13 @@ label{
     color: black;
 }
 
+
 .formColor:hover {
     transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .moneyUi {
-    font-weight: 600;
+    font-weight: bold;
 }
 input::placeholder {
     color: black;
@@ -93,3 +96,12 @@ input::placeholder {
 input:focus::placeholder {
     opacity: 0;
 }
+.table th.adjfont {
+    width: 50%;
+    font-weight: normal;
+  }
+
+  .AmountIndic{
+    text-decoration: underline dotted;
+
+  }

@@ -22,7 +22,7 @@ function DayInput({ label, hours, onChange, name, fee }) {
           <label htmlFor={name}>{label}</label>
         </div>
         <div className="col justify-content-center d-flex">
-          <div className="moneyUi">${fee}</div>
+          <div>${fee}</div>
         </div>
         <div className="col justify-content-center d-flex">
           <form>
