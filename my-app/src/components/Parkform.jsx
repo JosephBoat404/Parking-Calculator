@@ -4,9 +4,13 @@ import Navbar from "./Navbar";
 import DayInput from "./DayInput";
 import SpendResult from "./SpendResult";
 import Footer from "./Footer";
+import FeeInput from "./FeeInput";
 
 function Parkform() {
   // Initialize state for each day and additional hours
+  const [showFeeInput, setShowFeeInput] = useState(false);
+  const [PermitAmount, SetPermitAmount] = useState(260);
+  const [numberOfWeeksInSemester, SetnumberOfWeeksInSemester] = useState(16);
   const [days, setDays] = useState({
     monday: "",
     tuesday: "",
@@ -15,64 +19,113 @@ function Parkform() {
     friday: "",
     additionalHours: "",
   });
-  
-  
+
+  const [max_Hour, Setmax_Hour] = useState(12);
   const [worth, setWorth] = useState("No");
   const [savings, setSavings] = useState(0);
 
   // Calculate parking fee based on hours
+  const [fees, setFees] = useState([
+    { maxHours: 0, fee: 0 },
+    { maxHours: 1, fee: 2 },
+    { maxHours: 2, fee: 4 },
+    { maxHours: 6, fee: 8 },
+    { maxHours: 8, fee: 10 },
+  ]);
+
   const calculateFee = (hours) => {
-    if (hours <= 0.5) return 0;
-    if (hours <= 1) return 2;
-    if (hours <= 2) return 4;
-    if (hours <= 6) return 8;
-    if (hours <= 8) return 10;
-    return 12;
+    for (let i = 0; i < fees.length; i++) {
+      if (hours <= fees[i].maxHours) {
+        return fees[i].fee;
+      }
+    }
+
+    return max_Hour; // default fee for hours > 8
   };
 
   // Calculate total money to pay
-  const totalMoneyToPay = Object.values(days).reduce((total, hours) => total + calculateFee(hours), 0);
-  
+  const totalMoneyToPay = Object.values(days).reduce(
+    (total, hours) => total + calculateFee(hours),
+    0
+  );
+
   // Calculate total cost for semester
-  const PermitAmount=260;
-  const numberOfWeeksInSemester = 16;
+
   const totalCostForSemester = totalMoneyToPay * numberOfWeeksInSemester;
-  let savingsAmount=0;
-
-
-
+  let savingsAmount = 0;
 
   // Update worth based on total cost for semester
   useEffect(() => {
     setWorth(totalCostForSemester < PermitAmount ? "No" : "Yes");
-    setSavings(totalCostForSemester ===0 ? 0 : savingsAmount=Math.max(0, PermitAmount - totalCostForSemester));
-  }, [totalCostForSemester]);
+    setSavings(
+      totalCostForSemester === 0
+        ? 0
+        : (savingsAmount = Math.max(0, PermitAmount - totalCostForSemester))
+    );
+  }, [PermitAmount,totalCostForSemester]);
 
-  
-   // Handle the change of input value for each day
-   const handleChange = (event) => {
-     const { name, value } = event.target;
-     setDays(prevDays => ({ ...prevDays, [name]: value }));
-   };
+  // Handle the change of input value for each day
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setDays((prevDays) => ({ ...prevDays, [name]: value }));
+  };
 
-   // Calculate total hours
-   const totalHours = Object.values(days).reduce((total, hours) => total + Number(hours), 0);
+  // Calculate total hours
+  const totalHours = Object.values(days).reduce(
+    (total, hours) => total + Number(hours),
+    0
+  );
 
-   return (
-     <>
-       <Navbar />
+  return (
+    <>
+      <Navbar onEditRateClick={() => setShowFeeInput(true)} />
 
-       <div className="container p-3 mb-1">
-         <div className="row">
-           <div className="col justify-content-center d-flex lc">Day</div>
-           <div className="col justify-content-center d-flex lc">Money</div>
-           <div className="col justify-content-center d-flex lc">Hours</div>
-         </div>
-       </div>
+      <div
+        className="modal fade"
+        id="feeInputModal"
+        tabIndex="-1"
+        aria-labelledby="feeInputModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="feeInputModalLabel">
+                Edit Rate
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body bg-primary-subtle">
+              <FeeInput
+                fees={fees}
+                setFees={setFees}
+                maxHour={max_Hour}
+                setMaxHour={Setmax_Hour}
+                PermitAmount={PermitAmount}
+                SetPermitAmount={SetPermitAmount}
+                numberOfWeeksInSemester={numberOfWeeksInSemester}
+                SetnumberOfWeeksInSemester={SetnumberOfWeeksInSemester}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container p-3 mb-1">
+        <div className="row">
+          <div className="col justify-content-center d-flex lc">Day</div>
+          <div className="col justify-content-center d-flex lc">Money</div>
+          <div className="col justify-content-center d-flex lc">Hours</div>
+        </div>
+      </div>
 
       {Object.keys(days).map((day) => (
-        <div key={day}
-        >
+        <div key={day}>
           <DayInput
             label={day.charAt(0).toUpperCase() + day.slice(1)}
             hours={days[day]}
@@ -83,20 +136,18 @@ function Parkform() {
         </div>
       ))}
 
+      <SpendResult
+        Worth={worth}
+        totalHours={totalHours}
+        totalMoneyToPay={totalMoneyToPay}
+        totalCostForSemester={totalCostForSemester}
+        PermitAmount={PermitAmount}
+        savingsAmount={savings}
+      />
 
-       <SpendResult
-         Worth={worth}
-         totalHours={totalHours}
-         totalMoneyToPay={totalMoneyToPay}
-         totalCostForSemester={totalCostForSemester}
-         PermitAmount={PermitAmount}
-         savingsAmount={savings}
-       />
-
-       <Footer />
-
-     </>
-   );
+      <Footer />
+    </>
+  );
 }
 
 export default Parkform;

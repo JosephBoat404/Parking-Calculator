@@ -1,12 +1,12 @@
 import React from "react";
 import icon from "../Icons/Addparking.svg";
 
-function Navbar() {
+function Navbar({ onEditRateClick }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
         <button
-          className="navbar-toggler"
+          className="navbar-toggler "
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -50,7 +50,10 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <button className="btn btn-outline-light ml-auto editbtn">
+        <button className="btn btn-outline-light ml-auto editbtn" data-bs-toggle="modal" data-bs-target="#feeInputModal">
+
+
+
           
           <img
             src={icon}
