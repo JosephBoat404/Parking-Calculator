@@ -16,7 +16,7 @@ function DayInput({ label, hours, onChange, name, fee }) {
   };
 
   return (
-    <div className="container cb rounded shadow-sm p-3 mb-4">
+    <div className="container cb rounded -sm p-3 mb-4">
       <div className="row">
         <div className="col justify-content-center d-flex">
           <label htmlFor={name}>{label}</label>
@@ -27,7 +27,7 @@ function DayInput({ label, hours, onChange, name, fee }) {
         <div className="col justify-content-center d-flex">
           <form>
             <input
-              className="rounded formColor"
+              className="rounded formColor noscroll"
               type="number"
               id={name}
               name={name}

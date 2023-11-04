@@ -1,107 +1,125 @@
-body{
-    background-color: #001220;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-top: 10vh;
-    scroll-behavior: smooth;
-    overscroll-behavior-y: none;
-
+body {
+  background-color: #001220;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 10vh;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
 }
 
-
-  
-
-.fbc{
-    background: linear-gradient(180deg, rgba(245, 245, 245, 0.15) 7.37%, #001220 23.28%);
+.iconajc {
+  border: 1px solid white;
 }
 
-
-.btn-outline-light{
-    border-color: #FFFFFF !important;
-    color: #FFFFFF !important;
-    background: none !important;
-}
-.btn:hover{
-    background: none !important;
-    
-    
+.fbc {
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 0.15) 7.37%,
+    #001220 23.28%
+  );
 }
 
-.navbar-toggler{
-    border:2px solid #001220 !important;
+.btn-outline-light {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  background: none !important;
 }
-.navbar-expand-lg{
-    background: #D51E3A  !important;
-}
-
-.nav-link{
-    color: #FFFFFF !important;
+.btn:hover {
+  background: none !important;
 }
 
+.navbar-toggler {
+  border: 2px solid #001220 !important;
+}
+.navbar-expand-lg {
+  background: #d51e3a !important;
+}
 
-.nav-link:hover{
-    opacity: 0.6;
+.nav-link {
+  color: #ffffff !important;
 }
-.editbtn:hover{
-    opacity: 0.6;
+
+.nav-link:hover {
+  opacity: 0.6;
 }
-.cb{
-    background: #FFFFFF;
+
+.footericon:hover {
+  opacity: 0.6;
+}
+.editbtn:hover {
+  opacity: 0.6;
+}
+.cb {
+  background: #ffffff;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-   margin: 0;
+  margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
-
-
-.lc{
-    color: #FFFFFF;
+.lc {
+  color: #ffffff;
 }
 
-.formColor{
-    /* border-radius: 10px; */
-    min-width: 100px;
-    border: 1px solid;
-    text-align: center;
-    background-color: #D51E3A;
-    color: black;
-    transition: transform 0.3s; /* Animation */
-    
+.formColor {
+  /* border-radius: 10px; */
+  min-width: 100px;
+  border: 1px solid;
+  text-align: center;
+  background-color: #d51e3a;
+  color: black;
+  transition: transform 0.3s; /* Animation */
 }
 
-label{
-    color: black;
+label {
+  color: black;
 }
-
 
 .formColor:hover {
-    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(
+    1.1
+  ); 
 }
 
 .moneyUi {
-    font-weight: bold;
+  font-weight: normal;
 }
 input::placeholder {
-    color: black;
+  color: black;
 }
 input:focus::placeholder {
-    opacity: 0;
+  opacity: 0;
 }
 .table th.adjfont {
-    width: 50%;
-    font-weight: normal;
-  }
+  width: 50%;
+  font-weight: normal;
+}
 
-  .AmountIndic{
-    text-decoration: underline dotted;
+.AmountIndic {
+  text-decoration: underline dotted;
+}
 
-  }
+.cc,.ct{
+  background-color: #001220 !important;
+  color: #ffffff !important;
+}
+td.text-center.ct label {
+  color: #ffffff;
+}
+
+.modal-content{
+  background-color: #001220 !important;
+  color: #ffffff;
+}
+
+.dollarsign{
+  color: #ffffff !important;
+}

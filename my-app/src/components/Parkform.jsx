@@ -19,7 +19,14 @@ function Parkform() {
     friday: "",
     additionalHours: "",
   });
-
+  document.addEventListener("wheel", function (event) {
+    if (
+      document.activeElement.type === "number" &&
+      document.activeElement.classList.contains("noscroll")
+    ) {
+      document.activeElement.blur();
+    }
+  });
   const [max_Hour, Setmax_Hour] = useState(12);
   const [worth, setWorth] = useState("No");
   const [savings, setSavings] = useState(0);
@@ -62,7 +69,7 @@ function Parkform() {
         ? 0
         : (savingsAmount = Math.max(0, PermitAmount - totalCostForSemester))
     );
-  }, [PermitAmount,totalCostForSemester]);
+  }, [PermitAmount, totalCostForSemester]);
 
   // Handle the change of input value for each day
   const handleChange = (event) => {
@@ -87,20 +94,20 @@ function Parkform() {
         aria-labelledby="feeInputModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="feeInputModalLabel">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content border">
+            <div className="modal-header p-2">
+              <h5 className="modal-title " id="feeInputModalLabel">
                 Edit Rate
               </h5>
               <button
                 type="button"
-                className="btn-close"
+                className="btn-close bg-white border m-0"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body bg-primary-subtle">
+            <div>
               <FeeInput
                 fees={fees}
                 setFees={setFees}

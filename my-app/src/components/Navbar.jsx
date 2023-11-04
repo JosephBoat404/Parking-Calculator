@@ -1,5 +1,5 @@
 import React from "react";
-import icon from "../Icons/Addparking.svg";
+import Editbtn from "../Icons/Addparking.svg";
 
 function Navbar({ onEditRateClick }) {
   return (
@@ -50,13 +50,13 @@ function Navbar({ onEditRateClick }) {
             </li>
           </ul>
         </div>
-        <button className="btn btn-outline-light ml-auto editbtn" data-bs-toggle="modal" data-bs-target="#feeInputModal">
-
-
-
-          
+        <button
+          className="btn btn-outline-light ml-auto editbtn"
+          data-bs-toggle="modal"
+          data-bs-target="#feeInputModal"
+        >
           <img
-            src={icon}
+            src={Editbtn}
             alt="Edit"
             style={{ marginRight: "8px", marginBottom: "5px" }}
           />

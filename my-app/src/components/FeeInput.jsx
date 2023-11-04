@@ -1,6 +1,15 @@
-import React from 'react';
+import React from "react";
 
-function FeeInput({ fees, setFees, maxHour, setMaxHour, PermitAmount, SetPermitAmount, numberOfWeeksInSemester, SetnumberOfWeeksInSemester }) {
+function FeeInput({
+  fees,
+  setFees,
+  maxHour,
+  setMaxHour,
+  PermitAmount,
+  SetPermitAmount,
+  numberOfWeeksInSemester,
+  SetnumberOfWeeksInSemester,
+}) {
   const handleChange = (event, index) => {
     const { name, value } = event.target;
     const newFees = [...fees];
@@ -25,7 +34,7 @@ function FeeInput({ fees, setFees, maxHour, setMaxHour, PermitAmount, SetPermitA
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col rounded shadow-sm p-1 mb-4 bg-primary-subtle">
+        <div className="col  p-1 mb-4 bg-primary-subtle cc">
           <div className="row p-1">
             <div className="col text-center">Duration</div>
             <div className="col text-center">Fee</div>
@@ -40,24 +49,31 @@ function FeeInput({ fees, setFees, maxHour, setMaxHour, PermitAmount, SetPermitA
                     name="maxHours"
                     value={fee.maxHours}
                     onChange={(event) => handleChange(event, index)}
-                    className="form-control form-control-sm "
+                    className="form-control form-control-sm noscroll"
                   />
-                  <div className="input-group-append">
-                    <span className="input-group-text">hour</span>
-                  </div>
+                  <label
+                    className="dollarsign p-2  border"
+                    htmlFor="inputGroupFile01"
+                  >
+                    Hour/s
+                  </label>
                 </div>
               </div>
               <div className="col">
                 <div className="input-group">
-                  <div className="input-group-append">
-                    <span className="input-group-text">$</span>
-                  </div>
+                  <label
+                    className="dollarsign p-2 border"
+                    htmlFor="inputGroupFile01"
+                  >
+                    $
+                  </label>
                   <input
                     type="number"
                     name="fee"
                     value={fee.fee}
                     onChange={(event) => handleChange(event, index)}
-                    className="form-control form-control-sm "
+                    className="form-control form-control-sm noscroll"
+                    id="inputGroupFile01"
                   />
                 </div>
               </div>
@@ -65,25 +81,26 @@ function FeeInput({ fees, setFees, maxHour, setMaxHour, PermitAmount, SetPermitA
           ))}
 
           <div className="row p-1">
-            <div className="col">Permit Amount</div>
+            <div className="col">Permit Amount:</div>
             <div className="col">
               <div className="input-group">
-                <div className="input-group-append">
-                  <span className="input-group-text">$</span>
-                </div>
+                <label className="dollarsign p-2  border" htmlFor="permdollar">
+                  $
+                </label>
                 <input
                   type="number"
                   name="PermitAmount"
                   value={PermitAmount}
                   onChange={handlePermitAmountChange}
-                  className="form-control form-control-sm"
+                  className="form-control form-control-sm noscroll"
+                  id="permdollar"
                 />
               </div>
             </div>
           </div>
 
           <div className="row p-1">
-            <div className="col">Weeks</div>
+            <div className="col">Weeks:</div>
             <div className="col">
               <div className="input-group">
                 <input
@@ -91,17 +108,21 @@ function FeeInput({ fees, setFees, maxHour, setMaxHour, PermitAmount, SetPermitA
                   name="numberOfWeeksInSemester"
                   value={numberOfWeeksInSemester}
                   onChange={handleWeeksChange}
-                  className="form-control form-control-sm"
+                  className="form-control form-control-sm noscroll"
+                  id="semesterword"
                 />
-                <div className="input-group-append">
-                  <span className="input-group-text">week(s)</span>
-                </div>
+                <label
+                  className="dollarsign p-2  border"
+                  htmlFor="semesterword"
+                >
+                  Week/s
+                </label>
               </div>
             </div>
           </div>
 
           <div className="row p-1">
-            <div className="col">Max Hour</div>
+            <div className="col">Max Amount:</div>
             <div className="col">
               <div className="input-group">
                 <input
@@ -109,15 +130,15 @@ function FeeInput({ fees, setFees, maxHour, setMaxHour, PermitAmount, SetPermitA
                   name="maxHour"
                   value={maxHour}
                   onChange={handleMaxHourChange}
-                  className="form-control form-control-sm"
+                  className="form-control form-control-sm noscroll"
+                  id="hoursign"
                 />
-                <div className="input-group-append">
-                  <span className="input-group-text">hour(s)</span>
-                </div>
+                <label className="dollarsign p-2  border" htmlFor="hoursign">
+                  Hour/s
+                </label>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
