@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import Navbar from "./Navbar";
 import DayInput from "./DayInput";
 import SpendResult from "./SpendResult";
 import Footer from "./Footer";
 import FeeInput from "./FeeInput";
+import Closebtn from "../Icons/closebtn.svg"
 
 function Parkform() {
   // Initialize state for each day and additional hours
@@ -102,10 +102,10 @@ function Parkform() {
               </h5>
               <button
                 type="button"
-                className="btn-close bg-white border m-0"
+                className="btn border m-0 p-1 closebtn"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-              ></button>
+              > <img src={Closebtn} alt="" /></button>
             </div>
             <div>
               <FeeInput

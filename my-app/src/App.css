@@ -5,6 +5,7 @@ body {
   padding-top: 10vh;
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
+  font-size:17px;
 }
 
 .iconajc {
@@ -39,27 +40,21 @@ body {
   color: #ffffff !important;
 }
 
-.nav-link:hover {
+.nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover {
   opacity: 0.6;
 }
 
-.footericon:hover {
-  opacity: 0.6;
-}
-.editbtn:hover {
-  opacity: 0.6;
-}
 .cb {
   background: #ffffff;
 }
-/* Chrome, Safari, Edge, Opera */
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Firefox */
+
 input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
@@ -70,13 +65,12 @@ input[type="number"] {
 }
 
 .formColor {
-  /* border-radius: 10px; */
   min-width: 100px;
   border: 1px solid;
   text-align: center;
   background-color: #d51e3a;
   color: black;
-  transition: transform 0.3s; /* Animation */
+  transition: transform 0.3s;
 }
 
 label {
@@ -84,9 +78,7 @@ label {
 }
 
 .formColor:hover {
-  transform: scale(
-    1.1
-  ); 
+  transform: scale(1.1);
 }
 
 .moneyUi {
@@ -107,7 +99,8 @@ input:focus::placeholder {
   text-decoration: underline dotted;
 }
 
-.cc,.ct{
+.cc,
+.ct {
   background-color: #001220 !important;
   color: #ffffff !important;
 }
@@ -115,11 +108,30 @@ td.text-center.ct label {
   color: #ffffff;
 }
 
-.modal-content{
+.modal-content {
   background-color: #001220 !important;
   color: #ffffff;
 }
 
-.dollarsign{
+.dollarsign {
   color: #ffffff !important;
+}
+
+.minwidth {
+  width: 70px !important;
+}
+
+.custom-navbar-toggler {
+  border: 1px solid #fff !important;
+}
+
+input[type="number"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input:disabled {
+  background-color: #a09e9e !important;
+  color: #666;
+  cursor: not-allowed;
 }

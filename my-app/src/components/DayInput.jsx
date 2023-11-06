@@ -2,11 +2,11 @@ import React from "react";
 
 function DayInput({ label, hours, onChange, name, fee }) {
   const handleInputChange = (event) => {
-    // Parse the input value as a number
-    const inputValue = parseInt(event.target.value, 10);
-
-    // Check if the input value is greater than the maximum allowed (24)
-    if (inputValue > 24) {
+    // Get the input value as a string
+    const inputString = event.target.value;
+  
+    // Check if the input value is greater than the maximum allowed (24) or has more than 2 digits
+    if (parseInt(inputString, 10) > 24 || inputString.length > 2) {
       // If it's greater, set it to the maximum allowed value (24)
       onChange({ target: { name, value: 24 } });
     } else {
@@ -14,6 +14,7 @@ function DayInput({ label, hours, onChange, name, fee }) {
       onChange(event);
     }
   };
+  
 
   return (
     <div className="container cb rounded -sm p-3 mb-4">

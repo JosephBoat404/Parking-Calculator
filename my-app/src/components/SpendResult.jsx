@@ -21,7 +21,7 @@ function SpendResult({
           <tr>
             <th className="text-center ct adjfont" >Weekly Pay</th>
             <td className="text-center ct" >
-              <label>${totalMoneyToPay}</label>
+              <label>{}${totalMoneyToPay}</label>
             </td>
           </tr>
           <tr>

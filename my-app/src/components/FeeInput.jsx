@@ -13,28 +13,37 @@ function FeeInput({
   const handleChange = (event, index) => {
     const { name, value } = event.target;
     const newFees = [...fees];
-    if (!isNaN(value)) {
+    if (value === "" || !isNaN(value)) {
       newFees[index][name] = parseFloat(value);
+      setFees(newFees);
     }
-    setFees(newFees);
   };
 
   const handleMaxHourChange = (event) => {
-    setMaxHour(Number(event.target.value));
+    const value = event.target.value;
+    if (value === "" || !isNaN(value)) {
+      setMaxHour(value === "" ? "" : Number(value));
+    }
   };
 
   const handlePermitAmountChange = (event) => {
-    SetPermitAmount(Number(event.target.value));
+    const value = event.target.value;
+    if (value === "" || !isNaN(value)) {
+      SetPermitAmount(value === "" ? "" : Number(value));
+    }
   };
 
   const handleWeeksChange = (event) => {
-    SetnumberOfWeeksInSemester(Number(event.target.value));
+    const value = event.target.value;
+    if (value === "" || !isNaN(value)) {
+      SetnumberOfWeeksInSemester(value === "" ? "" : Number(value));
+    }
   };
 
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col  p-1 mb-4 bg-primary-subtle cc">
+        <div className="col  p-1 mb-1 bg-primary-subtle cc">
           <div className="row p-1">
             <div className="col text-center">Duration</div>
             <div className="col text-center">Fee</div>
@@ -49,10 +58,11 @@ function FeeInput({
                     name="maxHours"
                     value={fee.maxHours}
                     onChange={(event) => handleChange(event, index)}
-                    className="form-control form-control-sm noscroll"
+                    className="form-control form-control-sm noscroll focus-ring focus-ring-light"
+                    disabled={index === 0}
                   />
                   <label
-                    className="dollarsign p-2  border"
+                    className="dollarsign p-2 border"
                     htmlFor="inputGroupFile01"
                   >
                     Hour/s
@@ -72,16 +82,20 @@ function FeeInput({
                     name="fee"
                     value={fee.fee}
                     onChange={(event) => handleChange(event, index)}
-                    className="form-control form-control-sm noscroll"
+                    className="form-control form-control-sm noscroll focus-ring focus-ring-dark"
                     id="inputGroupFile01"
+                    disabled={index === 0} // Disable the input for the first row
                   />
                 </div>
               </div>
             </div>
           ))}
 
+          <div className="mb-3"></div>
           <div className="row p-1">
-            <div className="col">Permit Amount:</div>
+            <div className="col text-center d-flex justify-content-center align-items-center ">
+              Permit Amount
+            </div>
             <div className="col">
               <div className="input-group">
                 <label className="dollarsign p-2  border" htmlFor="permdollar">
@@ -100,7 +114,9 @@ function FeeInput({
           </div>
 
           <div className="row p-1">
-            <div className="col">Weeks:</div>
+            <div className="col d-flex justify-content-center align-items-center">
+              Weeks
+            </div>
             <div className="col">
               <div className="input-group">
                 <input
@@ -112,7 +128,7 @@ function FeeInput({
                   id="semesterword"
                 />
                 <label
-                  className="dollarsign p-2  border"
+                  className="dollarsign p-2  minwidth border"
                   htmlFor="semesterword"
                 >
                   Week/s
@@ -122,7 +138,9 @@ function FeeInput({
           </div>
 
           <div className="row p-1">
-            <div className="col">Max Amount:</div>
+            <div className="col d-flex justify-content-center align-items-center ">
+              Max Amount
+            </div>
             <div className="col">
               <div className="input-group">
                 <input
@@ -133,7 +151,10 @@ function FeeInput({
                   className="form-control form-control-sm noscroll"
                   id="hoursign"
                 />
-                <label className="dollarsign p-2  border" htmlFor="hoursign">
+                <label
+                  className="dollarsign p-2 minwidth border"
+                  htmlFor="hoursign"
+                >
                   Hour/s
                 </label>
               </div>
