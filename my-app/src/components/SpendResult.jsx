@@ -1,4 +1,6 @@
 import React from "react";
+import helpicon from "../Icons/helpicon.svg";
+import My_Utilities from "./My_Utilities.js";
 
 function SpendResult({
   totalHours,
@@ -42,7 +44,7 @@ function SpendResult({
           <tr>
             <th className="text-center moneyUi ct" >Get the <span className="AmountIndic">${PermitAmount}</span> Permit?</th>
             <td className="text-center ct" >
-              <label className="moneyUi ">{Worth}</label>
+              <label className="moneyUi ps-2">{Worth}</label><img src={helpicon} alt="help icon" className="ps-1 helpbtn" /> 
             </td>
           </tr>
         </tbody>

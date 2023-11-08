@@ -40,7 +40,7 @@ body {
   color: #ffffff !important;
 }
 
-.nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover {
+.nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover, .helpbtn:hover {
   opacity: 0.6;
 }
 
