@@ -1,5 +1,13 @@
+/* Variables */
+:root {
+  --background-color: #001220;
+  --font-color: #ffffff;
+  --highlight-color: #d51e3a;
+}
+
+/* General Styles */
 body {
-  background-color: #001220;
+  background-color: var(--background-color);
   font-family: Arial, sans-serif;
   margin: 0;
   padding-top: 10vh;
@@ -9,45 +17,51 @@ body {
 }
 
 .iconajc {
-  border: 1px solid white;
+  border: 1px solid var(--font-color);
 }
 
 .fbc {
   background: linear-gradient(
     180deg,
     rgba(245, 245, 245, 0.15) 7.37%,
-    #001220 23.28%
+    var(--background-color) 23.28%
   );
 }
 
+/* Button Styles */
 .btn-outline-light {
-  border-color: #ffffff !important;
-  color: #ffffff !important;
+  border-color: var(--font-color) !important;
+  color: var(--font-color) !important;
   background: none !important;
 }
+
 .btn:hover {
   background: none !important;
 }
 
+/* Navbar Styles */
 .navbar-toggler {
-  border: 2px solid #001220 !important;
+  border: 2px solid var(--background-color) !important;
 }
+
 .navbar-expand-lg {
-  background: #d51e3a !important;
+  background: var(--highlight-color) !important;
 }
 
 .nav-link {
-  color: #ffffff !important;
+  color: var(--font-color) !important;
 }
 
 .nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover, .helpbtn:hover {
   opacity: 0.6;
 }
+
 .helpbtn{
   cursor: pointer;
 }
+
 .cb {
-  background: #ffffff;
+  background: var(--font-color);
 }
 
 input::-webkit-outer-spin-button,
@@ -56,21 +70,20 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-
 input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
 .lc {
-  color: #ffffff;
+  color: var(--font-color);
 }
 
 .formColor {
   min-width: 100px;
   border: 1px solid;
   text-align: center;
-  background-color: #d51e3a;
+  background-color: var(--highlight-color);
   color: black;
   transition: transform 0.3s;
 }
@@ -86,12 +99,15 @@ label {
 .moneyUi {
   font-weight: normal;
 }
+
 input::placeholder {
   color: black;
 }
+
 input:focus::placeholder {
   opacity: 0;
 }
+
 .table th.adjfont {
   width: 50%;
   font-weight: normal;
@@ -103,20 +119,21 @@ input:focus::placeholder {
 
 .cc,
 .ct {
-  background-color: #001220 !important;
-  color: #ffffff !important;
+  background-color: var(--background-color) !important;
+  color: var(--font-color) !important;
 }
+
 td.text-center.ct label {
-  color: #ffffff;
+  color: var(--font-color);
 }
 
 .modal-content {
-  background-color: #001220 !important;
-  color: #ffffff;
+  background-color: var(--background-color) !important;
+  color: var(--font-color);
 }
 
 .dollarsign {
-  color: #ffffff !important;
+  color: var(--font-color) !important;
 }
 
 .minwidth {
@@ -124,7 +141,7 @@ td.text-center.ct label {
 }
 
 .custom-navbar-toggler {
-  border: 1px solid #fff !important;
+  border: 1px solid var(--font-color) !important;
 }
 
 input[type="number"]:focus {
