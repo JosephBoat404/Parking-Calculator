@@ -66,7 +66,7 @@ function Parkform() {
         ? 0
         : (savingsAmount = Math.max(0, PermitAmount - totalCostForSemester))
     );
-  }, [PermitAmount, totalCostForSemester]);
+  }, [PermitAmount, totalCostForSemester, numberOfWeeksInSemester]);
   
 
   // Handle the change of input value for each day
