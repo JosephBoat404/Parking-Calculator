@@ -43,7 +43,9 @@ body {
 .nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover, .helpbtn:hover {
   opacity: 0.6;
 }
-
+.helpbtn{
+  cursor: pointer;
+}
 .cb {
   background: #ffffff;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import Editbtn from "../Icons/Addparking.svg";
-import navtoggler from "../Icons/navtoggler.svg"
+import navtoggler from "../Icons/navtoggler.svg";
 
-function Navbar({ onEditRateClick }) {
+function Navbar({ handleShowModal }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
@@ -53,8 +53,7 @@ function Navbar({ onEditRateClick }) {
         </div>
         <button
           className="btn btn-outline-light ml-auto editbtn"
-          data-bs-toggle="modal"
-          data-bs-target="#feeInputModal"
+          onClick={handleShowModal}
         >
           <img
             src={Editbtn}

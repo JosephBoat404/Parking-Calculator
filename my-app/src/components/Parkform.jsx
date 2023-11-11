@@ -4,12 +4,16 @@ import DayInput from "./DayInput";
 import SpendResult from "./SpendResult";
 import Footer from "./Footer";
 import FeeInput from "./FeeInput";
-import Closebtn from "../Icons/closebtn.svg"
 
 function Parkform() {
-  // Initialize state for each day and additional hours
-  const [showFeeInput, setShowFeeInput] = useState(false);
+  const [explainM, setExplainM] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
   const [PermitAmount, SetPermitAmount] = useState(260);
+  const [max_Hour, Setmax_Hour] = useState(12);
+  const [worth, setWorth] = useState("No");
+  const [savings, setSavings] = useState(0);
   const [numberOfWeeksInSemester, SetnumberOfWeeksInSemester] = useState(16);
   const [days, setDays] = useState({
     monday: "",
@@ -19,18 +23,7 @@ function Parkform() {
     friday: "",
     additionalHours: "",
   });
-  document.addEventListener("wheel", function (event) {
-    if (
-      document.activeElement.type === "number" &&
-      document.activeElement.classList.contains("noscroll")
-    ) {
-      document.activeElement.blur();
-    }
-  });
-  const [max_Hour, Setmax_Hour] = useState(12);
-  const [worth, setWorth] = useState("No");
-  const [savings, setSavings] = useState(0);
-
+  
   // Calculate parking fee based on hours
   const [fees, setFees] = useState([
     { maxHours: 0, fee: 0 },
@@ -46,7 +39,6 @@ function Parkform() {
         return fees[i].fee;
       }
     }
-
     return max_Hour; // default fee for hours > 8
   };
 
@@ -57,19 +49,25 @@ function Parkform() {
   );
 
   // Calculate total cost for semester
-
   const totalCostForSemester = totalMoneyToPay * numberOfWeeksInSemester;
   let savingsAmount = 0;
 
   // Update worth based on total cost for semester
   useEffect(() => {
-    setWorth(totalCostForSemester < PermitAmount ? "No" : "Yes");
+    if (totalCostForSemester < PermitAmount) {
+      setWorth("No");
+      setExplainM(`After calculating, it appears that you will spend $${totalCostForSemester} on parking over a ${numberOfWeeksInSemester} week/s period, which is less than the $${PermitAmount} permit fee. This means you will save $${savings} in total.`);
+    } else {
+      setWorth("Yes");
+      setExplainM(`After calculating, it appears that you will spend $${totalCostForSemester} on parking over a ${numberOfWeeksInSemester} week/s period, which is higher than the $${PermitAmount} permit fee.To avoid any additional expenses, obtain the permit.`);
+    }
     setSavings(
       totalCostForSemester === 0
         ? 0
         : (savingsAmount = Math.max(0, PermitAmount - totalCostForSemester))
     );
   }, [PermitAmount, totalCostForSemester]);
+  
 
   // Handle the change of input value for each day
   const handleChange = (event) => {
@@ -85,43 +83,20 @@ function Parkform() {
 
   return (
     <>
-      <Navbar onEditRateClick={() => setShowFeeInput(true)} />
+      <Navbar handleShowModal={handleShowModal} />
 
-      <div
-        className="modal fade"
-        id="feeInputModal"
-        tabIndex="-1"
-        aria-labelledby="feeInputModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content border">
-            <div className="modal-header p-2">
-              <h5 className="modal-title " id="feeInputModalLabel">
-                Edit Rate
-              </h5>
-              <button
-                type="button"
-                className="btn border m-0 p-1 closebtn"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              > <img src={Closebtn} alt="" /></button>
-            </div>
-            <div>
-              <FeeInput
-                fees={fees}
-                setFees={setFees}
-                maxHour={max_Hour}
-                setMaxHour={Setmax_Hour}
-                PermitAmount={PermitAmount}
-                SetPermitAmount={SetPermitAmount}
-                numberOfWeeksInSemester={numberOfWeeksInSemester}
-                SetnumberOfWeeksInSemester={SetnumberOfWeeksInSemester}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FeeInput
+        fees={fees}
+        setFees={setFees}
+        maxHour={max_Hour}
+        setMaxHour={Setmax_Hour}
+        PermitAmount={PermitAmount}
+        SetPermitAmount={SetPermitAmount}
+        numberOfWeeksInSemester={numberOfWeeksInSemester}
+        SetnumberOfWeeksInSemester={SetnumberOfWeeksInSemester}
+        showModal={showModal}
+        handleCloseModal={handleCloseModal}
+      />
 
       <div className="container p-3 mb-1">
         <div className="row">
@@ -150,6 +125,7 @@ function Parkform() {
         totalCostForSemester={totalCostForSemester}
         PermitAmount={PermitAmount}
         savingsAmount={savings}
+        ExplainModal={explainM}
       />
 
       <Footer />
