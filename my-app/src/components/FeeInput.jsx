@@ -17,11 +17,28 @@ function FeeInput({
   const handleChange = (event, index) => {
     const { name, value } = event.target;
     const newFees = [...fees];
-    if (value === "" || !isNaN(value)) {
-      newFees[index][name] = parseFloat(value);
+    if (name === "maxHours" && (value === "" || (value <= 24 && !isNaN(value)))) {
+      newFees[index][name] = value === "" ? "" : parseFloat(value);
+      setFees(newFees);
+    } else if (name === "fee" && (value === "" || !isNaN(value))) {
+      newFees[index][name] = value === "" ? "" : parseFloat(value);
       setFees(newFees);
     }
   };
+  
+  const handleBlur = (event, index) => {
+    const { name, value } = event.target;
+    // Check if the value already exists in the fees array
+    const isDuplicate = fees.some((fee, i) => i !== index && fee[name] === parseFloat(value));
+    if (isDuplicate) {
+      alert("Duplicate number is not allowed.");
+      const newFees = [...fees];
+      newFees[index][name] = ""; // reset the value
+      setFees(newFees);
+    }
+  };
+  
+  
 
   const handleMaxHourChange = (event) => {
     const value = event.target.value;
@@ -44,11 +61,28 @@ function FeeInput({
     }
   };
 
+  const handleAddFee = () => {
+    setFees([...fees, { maxHours:"", fee: "" }]);
+  };
+
+  const handleRemoveFee = () => {
+    if (fees.length > 5) {
+      const newFees = [...fees];
+      newFees.pop();
+      setFees(newFees);
+    } else {
+      alert("You cannot remove the existing form.");
+    }
+  };
+  
+  
   return (
     <div>
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header className="custom-modal-header p-2">
           <Modal.Title>Fee Input Container</Modal.Title>
+          <button onClick={handleRemoveFee}>Remove</button>
+          <button onClick={handleAddFee}>Add</button>
           <button
             type="button"
             className="btn m-0 p-1 closebtn"
@@ -77,6 +111,7 @@ function FeeInput({
                           name="maxHours"
                           value={fee.maxHours}
                           onChange={(event) => handleChange(event, index)}
+                          onBlur={(event) => handleBlur(event, index)}
                           className="form-control form-control-sm noscroll focus-ring focus-ring-light"
                           disabled={index === 0}
                         />
@@ -103,6 +138,7 @@ function FeeInput({
                           onChange={(event) => handleChange(event, index)}
                           className="form-control form-control-sm noscroll focus-ring focus-ring-dark"
                           id="inputGroupFile01"
+                          onBlur={(event) => handleBlur(event, index)}
                           disabled={index === 0}
                         />
                       </div>

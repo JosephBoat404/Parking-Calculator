@@ -9,7 +9,14 @@ function ParentComponent() {
   const [explainM, setExplainM] = useState("");
   const [showModal, setShowModal] = useState(false);
   const handleShowModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
+  const handleCloseModal = () => {
+    // Filter out any forms that are empty
+    const newFees = fees.filter(fee => fee.maxHours !== "" && fee.fee !== "");
+    setFees(newFees);
+    // Close the modal
+    setShowModal(false);
+  };
+  
   const [PermitAmount, SetPermitAmount] = useState(260);
   const [max_Hour, Setmax_Hour] = useState(12);
   const [worth, setWorth] = useState("No");
