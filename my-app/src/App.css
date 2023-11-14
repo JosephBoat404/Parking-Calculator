@@ -52,7 +52,7 @@ body {
   color: var(--font-color) !important;
 }
 
-.nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover, .helpbtn:hover {
+.nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover, .helpbtn:hover, .addremove:hover {
   opacity: 0.6;
 }
 

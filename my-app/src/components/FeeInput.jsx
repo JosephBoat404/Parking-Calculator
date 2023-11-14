@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal} from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import Closebtn from "../Icons/closebtn.svg";
 
 function FeeInput({
@@ -17,7 +17,10 @@ function FeeInput({
   const handleChange = (event, index) => {
     const { name, value } = event.target;
     const newFees = [...fees];
-    if (name === "maxHours" && (value === "" || (value <= 24 && !isNaN(value)))) {
+    if (
+      name === "maxHours" &&
+      (value === "" || (value <= 24 && !isNaN(value)))
+    ) {
       newFees[index][name] = value === "" ? "" : parseFloat(value);
       setFees(newFees);
     } else if (name === "fee" && (value === "" || !isNaN(value))) {
@@ -25,11 +28,13 @@ function FeeInput({
       setFees(newFees);
     }
   };
-  
+
   const handleBlur = (event, index) => {
     const { name, value } = event.target;
     // Check if the value already exists in the fees array
-    const isDuplicate = fees.some((fee, i) => i !== index && fee[name] === parseFloat(value));
+    const isDuplicate = fees.some(
+      (fee, i) => i !== index && fee[name] === parseFloat(value)
+    );
     if (isDuplicate) {
       alert("Duplicate number is not allowed.");
       const newFees = [...fees];
@@ -37,8 +42,6 @@ function FeeInput({
       setFees(newFees);
     }
   };
-  
-  
 
   const handleMaxHourChange = (event) => {
     const value = event.target.value;
@@ -62,7 +65,7 @@ function FeeInput({
   };
 
   const handleAddFee = () => {
-    setFees([...fees, { maxHours:"", fee: "" }]);
+    setFees([...fees, { maxHours: "", fee: "" }]);
   };
 
   const handleRemoveFee = () => {
@@ -74,25 +77,37 @@ function FeeInput({
       alert("You cannot remove the existing form.");
     }
   };
-  
-  
+
   return (
     <div>
-      <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header className="custom-modal-header p-2">
-          <Modal.Title>Fee Input Container</Modal.Title>
-          <button onClick={handleRemoveFee}>Remove</button>
-          <button onClick={handleAddFee}>Add</button>
-          <button
-            type="button"
-            className="btn m-0 p-1 closebtn"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-            onClick={handleCloseModal}
-          >
-            <img src={Closebtn} alt="Close button" />
-          </button>
+      <Modal show={showModal} onHide={handleCloseModal} centered>
+        <Modal.Header className="d-flex justify-content-between align-items-center p-2">
+          <Modal.Title>Edit Rate</Modal.Title>
+          <div>
+            <button
+              className="btn btn-outline-light addremove m-1"
+              onClick={handleRemoveFee}
+            >
+              Remove
+            </button>
+            <button
+              className="btn btn-outline-light addremove m-1"
+              onClick={handleAddFee}
+            >
+              Add
+            </button>
+            <button
+              type="button"
+              className="btn m-1 p-1 closebtn btn-outline-light"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              onClick={handleCloseModal}
+            >
+              <img src={Closebtn} alt="Close button" />
+            </button>
+          </div>
         </Modal.Header>
+
         <Modal.Body>
           <div className="container">
             <div className="row justify-content-center">
