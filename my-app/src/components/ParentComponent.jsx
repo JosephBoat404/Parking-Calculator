@@ -5,7 +5,7 @@ import SpendResult from "./SpendResult";
 import Footer from "./Footer";
 import FeeInput from "./FeeInput";
 
-function Parkform() {
+function ParentComponent() {
   const [explainM, setExplainM] = useState("");
   const [showModal, setShowModal] = useState(false);
   const handleShowModal = () => setShowModal(true);
@@ -83,7 +83,8 @@ function Parkform() {
 
   return (
     <>
-      <Navbar handleShowModal={handleShowModal} />
+      <a id="Home"></a>
+      <Navbar handleShowModal={handleShowModal}  />
 
       <FeeInput
         fees={fees}
@@ -133,4 +134,4 @@ function Parkform() {
   );
 }
 
-export default Parkform;
+export default ParentComponent;

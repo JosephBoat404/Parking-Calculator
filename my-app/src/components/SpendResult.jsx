@@ -51,13 +51,14 @@ function SpendResult({
               Permit?
             </th>
             <td className="text-center ct">
-              <label className="moneyUi ps-2">{Worth}</label>
-              <img
+              <label className="moneyUi">{Worth}</label>
+              <button className="mybtn" onClick={handleShow}>
+                <img
                 src={helpicon}
                 alt="help icon"
-                className="ps-1 helpbtn"
-                onClick={handleShow}
-              />
+                className="helpbtn "
+              /></button>
+
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header className="p-2">
                   <Modal.Title>Help</Modal.Title>

@@ -5,7 +5,7 @@ import linkedinIcon from "../Icons/linkedin.svg";
 function Footer() {
   return (
     <>
-      <div className="container-fluid fbc">
+      <div className="container-fluid fbc" id="footer">
         <div className="container">
           <footer className="d-flex flex-wrap justify-content-between align-items-center py-5 ">
             <div className="col-md-4 d-flex align-items-center">

@@ -154,3 +154,8 @@ input:disabled {
   color: #666;
   cursor: not-allowed;
 }
+.mybtn{
+  text-decoration: none ;
+  background: none;
+  border: none;
+}

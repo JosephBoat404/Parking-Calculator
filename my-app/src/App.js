@@ -1,4 +1,4 @@
-import Parkform from "./components/Parkform.jsx";
+import ParentComponent from "./components/ParentComponent.jsx";
 import "./App.css"
 
 
@@ -6,7 +6,7 @@ import "./App.css"
 function App() {
   return (
     <div>
-      <Parkform />
+      <ParentComponent />
     </div>
   );
 }

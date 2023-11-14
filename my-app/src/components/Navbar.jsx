@@ -23,7 +23,7 @@ function Navbar({ handleShowModal }) {
               <a
                 className="nav-link active"
                 aria-current="page"
-                href="index.html"
+                href="#Home"
                 style={{ display: "flex", alignItems: "center" }}
               >
                 Home
@@ -33,10 +33,10 @@ function Navbar({ handleShowModal }) {
               <a
                 className="nav-link active"
                 aria-current="page"
-                href="index.html"
+                href="#footer"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                Semester
+                Contact
               </a>
             </li>
             <li className="nav-item">
