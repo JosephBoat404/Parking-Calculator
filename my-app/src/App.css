@@ -136,9 +136,7 @@ td.text-center.ct label {
   color: var(--font-color) !important;
 }
 
-.minwidth {
-  width: 70px !important;
-}
+
 
 .custom-navbar-toggler {
   border: 1px solid var(--font-color) !important;

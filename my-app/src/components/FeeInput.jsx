@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import Closebtn from "../Icons/closebtn.svg";
 
@@ -201,7 +200,7 @@ function FeeInput({
                         id="semesterword"
                       />
                       <label
-                        className="dollarsign p-2  minwidth border"
+                        className="dollarsign p-2 border"
                         htmlFor="semesterword"
                       >
                         Week/s
@@ -216,6 +215,12 @@ function FeeInput({
                   </div>
                   <div className="col">
                     <div className="input-group">
+                      <label
+                        className="dollarsign p-2 border"
+                        htmlFor="hoursign"
+                      >
+                        $
+                      </label>
                       <input
                         type="number"
                         name="maxHour"
@@ -224,12 +229,6 @@ function FeeInput({
                         className="form-control form-control-sm noscroll"
                         id="hoursign"
                       />
-                      <label
-                        className="dollarsign p-2 minwidth border"
-                        htmlFor="hoursign"
-                      >
-                        Hour/s
-                      </label>
                     </div>
                   </div>
                 </div>
