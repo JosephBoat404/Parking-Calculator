@@ -56,7 +56,7 @@ function Navbar({ handleShowModal }) {
           </ul>
         </div>
         <button
-          className="btn btn-outline-light ml-auto editbtn disabled"
+          className="btn btn-outline-light ml-auto editbtn"
           onClick={handleShowModal}
           disabled={isHelpPage}
         >
