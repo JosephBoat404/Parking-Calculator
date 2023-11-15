@@ -1,22 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
 import DayInput from "./DayInput";
 import SpendResult from "./SpendResult";
-import Footer from "./Footer";
 import FeeInput from "./FeeInput";
 
-function ParentComponent() {
+function ParentComponent({handleCloseModal,showModal, fees, setFees}) {
   const [explainM, setExplainM] = useState("");
-  const [showModal, setShowModal] = useState(false);
-  const handleShowModal = () => setShowModal(true);
-  const handleCloseModal = () => {
-    // Filter out any forms that are empty
-    const newFees = fees.filter(fee => fee.maxHours !== "" && fee.fee !== "");
-    setFees(newFees);
-    // Close the modal
-    setShowModal(false);
-  };
-  
   const [PermitAmount, SetPermitAmount] = useState(260);
   const [max_Hour, Setmax_Hour] = useState(12);
   const [worth, setWorth] = useState("No");
@@ -31,15 +19,6 @@ function ParentComponent() {
     additionalHours: "",
   });
   
-  // Calculate parking fee based on hours
-  const [fees, setFees] = useState([
-    { maxHours: 0, fee: 0 },
-    { maxHours: 1, fee: 2 },
-    { maxHours: 2, fee: 4 },
-    { maxHours: 6, fee: 8 },
-    { maxHours: 8, fee: 10 },
-  ]);
-
   const calculateFee = (hours) => {
     for (let i = 0; i < fees.length; i++) {
       if (hours <= fees[i].maxHours) {
@@ -90,8 +69,6 @@ function ParentComponent() {
 
   return (
     <>
-      <Navbar handleShowModal={handleShowModal}  />
-
       <FeeInput
         fees={fees}
         setFees={setFees}
@@ -134,8 +111,6 @@ function ParentComponent() {
         savingsAmount={savings}
         ExplainModal={explainM}
       />
-
-      <Footer />
     </>
   );
 }
