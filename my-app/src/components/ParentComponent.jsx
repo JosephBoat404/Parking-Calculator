@@ -90,7 +90,6 @@ function ParentComponent() {
 
   return (
     <>
-      <div id="Home"></div>
       <Navbar handleShowModal={handleShowModal}  />
 
       <FeeInput

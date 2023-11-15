@@ -1,8 +1,12 @@
 import React from "react";
 import Editbtn from "../Icons/Addparking.svg";
 import navtoggler from "../Icons/navtoggler.svg";
+import { useLocation } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Navbar({ handleShowModal }) {
+  const location = useLocation();
+  const isHelpPage = location.pathname === "/Help";
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
@@ -20,14 +24,14 @@ function Navbar({ handleShowModal }) {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
                 aria-current="page"
-                href="#Home"
+                to="/"
                 style={{ display: "flex", alignItems: "center" }}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a
@@ -40,20 +44,21 @@ function Navbar({ handleShowModal }) {
               </a>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
                 aria-current="page"
-                href="index.html"
+                to="/Help"
                 style={{ display: "flex", alignItems: "center" }}
               >
                 Help
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <button
-          className="btn btn-outline-light ml-auto editbtn"
+          className="btn btn-outline-light ml-auto editbtn disabled"
           onClick={handleShowModal}
+          disabled={isHelpPage}
         >
           <img
             src={Editbtn}

@@ -28,19 +28,19 @@ function SpendResult({
             </td>
           </tr>
           <tr>
-            <th className="text-center ct adjfont">Weekly Pay</th>
+            <th className="text-center ct adjfont">Weekly Expenses</th>
             <td className="text-center ct">
               <label>${totalMoneyToPay}</label>
             </td>
           </tr>
           <tr>
-            <th className="text-center ct adjfont">Semester Pay</th>
+            <th className="text-center ct adjfont">Semester Expenses</th>
             <td className="text-center ct">
               <label>${totalCostForSemester}</label>
             </td>
           </tr>
           <tr>
-            <th className="text-center ct adjfont">Saving</th>
+            <th className="text-center ct adjfont">Savings</th>
             <td className="text-center ct">
               <label>${savingsAmount}</label>
             </td>
@@ -56,7 +56,8 @@ function SpendResult({
                 <img
                 src={helpicon}
                 alt="help icon"
-                className="helpbtn "
+                className="helpbtn"
+                title="Click to See Why"
               /></button>
 
               <Modal show={show} onHide={handleClose}>
@@ -64,7 +65,7 @@ function SpendResult({
                   <Modal.Title>Help</Modal.Title>
                   <button
                     type="button"
-                    className="btn m-0 p-1 closebtn"
+                    className="btn m-0 p-1 closebtn btn-outline-light"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                     onClick={handleClose}

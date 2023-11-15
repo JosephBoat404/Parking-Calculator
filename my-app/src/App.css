@@ -20,6 +20,7 @@ body {
   border: 1px solid var(--font-color);
 }
 
+/* Footer */
 .fbc {
   background: linear-gradient(
     180deg,
@@ -156,4 +157,9 @@ input:disabled {
   text-decoration: none ;
   background: none;
   border: none;
+}
+
+.editbtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
