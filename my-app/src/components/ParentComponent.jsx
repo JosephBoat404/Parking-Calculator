@@ -82,7 +82,7 @@ function ParentComponent({handleCloseModal,showModal, fees, setFees}) {
         handleCloseModal={handleCloseModal}
       />
 
-      <div className="container p-3 mb-1">
+      <div className="container p-3 mb-1 fade-in">
         <div className="row">
           <div className="col justify-content-center d-flex lc">Day</div>
           <div className="col justify-content-center d-flex lc">Money</div>

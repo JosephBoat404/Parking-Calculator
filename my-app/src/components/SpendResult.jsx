@@ -18,7 +18,7 @@ function SpendResult({
   const handleShow = () => setShow(true);
 
   return (
-    <div className="container rounded -sm p-3 ps-0 pe-0 mb-4 bg-primary-subtle cc border">
+    <div className="container rounded -sm p-3 ps-0 pe-0 mb-4 bg-primary-subtle cc border fade-in">
       <table className="table table-dark table-hover ct">
         <tbody>
           <tr>

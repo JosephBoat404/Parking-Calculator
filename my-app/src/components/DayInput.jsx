@@ -17,7 +17,7 @@ function DayInput({ label, hours, onChange, name, fee }) {
   
 
   return (
-    <div className="container cb rounded -sm p-3 mb-4">
+    <div className="container cb rounded -sm p-3 mb-4 fade-in">
       <div className="row">
         <div className="col justify-content-center d-flex">
           <label htmlFor={name}>{label}</label>

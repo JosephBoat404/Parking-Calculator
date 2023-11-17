@@ -4,7 +4,7 @@ import React from "react";
 
 function HelpPage() {
   return (
-    <div className="container mt-5 text-white">
+    <div className="container mt-5 text-white fade-in">
       <h1 className="mb-4">Help Center</h1>
 
       <section className="mb-4">
