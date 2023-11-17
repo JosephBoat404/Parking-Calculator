@@ -21,7 +21,7 @@ function HelpPage() {
           <li>
             You can enter your desired parking rate, permit amount, and expected
             number of weeks you will be parking. Instructions are in the{" "}
-            <a href="#EditRateSection">Editing Rate section</a>.
+            <a href="#EditRateSection">Editing Rate section.</a>
           </li>
         </ol>
       </section>
