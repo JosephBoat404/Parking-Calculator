@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import DayInput from "./DayInput";
 import SpendResult from "./SpendResult";
 import FeeInput from "./FeeInput";
+import DayMoneyHour from "./DayMoneyHour";
 
 function ParentComponent({handleCloseModal,showModal, fees, setFees}) {
   const [explainM, setExplainM] = useState("");
@@ -54,7 +55,6 @@ function ParentComponent({handleCloseModal,showModal, fees, setFees}) {
     );
   }, [PermitAmount, totalCostForSemester, numberOfWeeksInSemester]);
   
-
   // Handle the change of input value for each day
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -82,13 +82,7 @@ function ParentComponent({handleCloseModal,showModal, fees, setFees}) {
         handleCloseModal={handleCloseModal}
       />
 
-      <div className="container p-3 mb-1 fade-in">
-        <div className="row">
-          <div className="col justify-content-center d-flex lc">Day</div>
-          <div className="col justify-content-center d-flex lc">Money</div>
-          <div className="col justify-content-center d-flex lc">Hours</div>
-        </div>
-      </div>
+      <DayMoneyHour />
 
       {Object.keys(days).map((day) => (
         <div key={day}>
