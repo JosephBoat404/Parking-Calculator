@@ -16,13 +16,12 @@ function FeeInput({
   const handleChange = (event, index) => {
     const { name, value } = event.target;
     const newFees = [...fees];
+
+    // Validate and update the state based on the input field name
     if (
-      name === "maxHours" &&
-      (value === "" || (value <= 24 && !isNaN(value)))
+      (name === "maxHours" && (value === "" || (value <= 24 && !isNaN(value)))) ||
+      (name === "fee" && (value === "" || !isNaN(value)))
     ) {
-      newFees[index][name] = value === "" ? "" : parseFloat(value);
-      setFees(newFees);
-    } else if (name === "fee" && (value === "" || !isNaN(value))) {
       newFees[index][name] = value === "" ? "" : parseFloat(value);
       setFees(newFees);
     }
@@ -30,20 +29,24 @@ function FeeInput({
 
   const handleBlur = (event, index) => {
     const { name, value } = event.target;
-    // Check if the value already exists in the fees array
+
+    // Check for duplicate values in the fees array
     const isDuplicate = fees.some(
       (fee, i) => i !== index && fee[name] === parseFloat(value)
     );
+
     if (isDuplicate) {
       alert("Duplicate number is not allowed.");
       const newFees = [...fees];
-      newFees[index][name] = ""; // reset the value
+      newFees[index][name] = ""; // Reset the value
       setFees(newFees);
     }
   };
 
   const handleMaxHourChange = (event) => {
     const value = event.target.value;
+
+    // Validate and update the state for maxHour
     if (value === "" || !isNaN(value)) {
       setMaxHour(value === "" ? "" : Number(value));
     }
@@ -51,6 +54,8 @@ function FeeInput({
 
   const handlePermitAmountChange = (event) => {
     const value = event.target.value;
+
+    // Validate and update the state for PermitAmount
     if (value === "" || !isNaN(value)) {
       SetPermitAmount(value === "" ? "" : Number(value));
     }
@@ -58,6 +63,8 @@ function FeeInput({
 
   const handleWeeksChange = (event) => {
     const value = event.target.value;
+
+    // Validate and update the state for numberOfWeeksInSemester
     if (value === "" || !isNaN(value)) {
       SetnumberOfWeeksInSemester(value === "" ? "" : Number(value));
     }
@@ -110,7 +117,7 @@ function FeeInput({
         <Modal.Body>
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col  p-1 mb-1 bg-primary-subtle cc">
+              <div className="col p-1 mb-1 bg-primary-subtle cc">
                 <div className="row p-1">
                   <div className="col text-center">Duration</div>
                   <div className="col text-center">Fee</div>
@@ -128,10 +135,11 @@ function FeeInput({
                           onBlur={(event) => handleBlur(event, index)}
                           className="form-control form-control-sm noscroll focus-ring focus-ring-light"
                           disabled={index === 0}
+                          id={`inputGroupFile01_${index}`}
                         />
                         <label
                           className="dollarsign p-2 border"
-                          htmlFor="inputGroupFile01"
+                          htmlFor={`inputGroupFile01_${index}`}
                         >
                           Hour/s
                         </label>
@@ -141,7 +149,7 @@ function FeeInput({
                       <div className="input-group">
                         <label
                           className="dollarsign p-2 border"
-                          htmlFor="inputGroupFile01"
+                          htmlFor={`inputGroupFile01_${index}`}
                         >
                           $
                         </label>
@@ -151,7 +159,6 @@ function FeeInput({
                           value={fee.fee}
                           onChange={(event) => handleChange(event, index)}
                           className="form-control form-control-sm noscroll focus-ring focus-ring-dark"
-                          id="inputGroupFile01"
                           onBlur={(event) => handleBlur(event, index)}
                           disabled={index === 0}
                         />

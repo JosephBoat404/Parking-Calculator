@@ -24,25 +24,25 @@ function SpendResult({
           <tr>
             <th className="text-center ct adjfont">Weekly Hours</th>
             <td className="text-center ct">
-              <label>{totalHours}hr</label>
+              <span>{totalHours}hr</span>
             </td>
           </tr>
           <tr>
             <th className="text-center ct adjfont">Weekly Expenses</th>
             <td className="text-center ct">
-              <label>${totalMoneyToPay}</label>
+              <span>${totalMoneyToPay}</span>
             </td>
           </tr>
           <tr>
             <th className="text-center ct adjfont">Semester Expenses</th>
             <td className="text-center ct">
-              <label>${totalCostForSemester}</label>
+              <span>${totalCostForSemester}</span>
             </td>
           </tr>
           <tr>
             <th className="text-center ct adjfont">Savings</th>
             <td className="text-center ct">
-              <label>${savingsAmount}</label>
+              <span>${savingsAmount}</span>
             </td>
           </tr>
           <tr>
@@ -51,7 +51,7 @@ function SpendResult({
               Permit?
             </th>
             <td className="text-center ct">
-              <label className="moneyUi">{Worth}</label>
+              <span className="moneyUi">{Worth}</span>
               <button className="mybtn" onClick={handleShow}>
                 <img
                 src={helpicon}
@@ -67,7 +67,7 @@ function SpendResult({
                     type="button"
                     className="btn m-0 p-1 closebtn btn-outline-light"
                     data-bs-dismiss="modal"
-                    aria-label="Close"
+                    aria-span="Close"
                     onClick={handleClose}
                   >
                     <img src={Closebtn} alt="Close button" />
