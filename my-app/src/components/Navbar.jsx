@@ -59,6 +59,7 @@ function Navbar({ handleShowModal }) {
           className="btn btn-outline-light ml-auto editbtn"
           onClick={handleShowModal}
           disabled={isHelpPage}
+          type="button"
         >
           <img
             src={Editbtn}
