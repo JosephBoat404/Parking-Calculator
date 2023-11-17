@@ -3,6 +3,7 @@ import DayInput from "./DayInput";
 import SpendResult from "./SpendResult";
 import FeeInput from "./FeeInput";
 import DayMoneyHour from "./DayMoneyHour";
+import AccordionNav from "./AccordionNav";
 
 function ParentComponent({handleCloseModal,showModal, fees, setFees}) {
   const [explainM, setExplainM] = useState("");
@@ -69,6 +70,7 @@ function ParentComponent({handleCloseModal,showModal, fees, setFees}) {
 
   return (
     <>
+      <AccordionNav />
       <FeeInput
         fees={fees}
         setFees={setFees}
