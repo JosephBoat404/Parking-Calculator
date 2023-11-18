@@ -179,3 +179,7 @@ input:disabled {
 .accordion-button:not(.collapsed) {
   box-shadow: none;
 }
+
+.accordion-button{
+
+}
