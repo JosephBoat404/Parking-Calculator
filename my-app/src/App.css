@@ -172,3 +172,10 @@ input:disabled {
   animation-name: fadeIn;
   animation-duration: 1.6s;
 }
+.accordion {
+  --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
