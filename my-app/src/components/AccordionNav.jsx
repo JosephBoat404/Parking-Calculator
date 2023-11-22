@@ -2,12 +2,12 @@ import Accordion from "react-bootstrap/Accordion";
 
 function AccordionNav() {
   return (
-    <Accordion defaultActiveKey={["0"]} alwaysOpen flush>
+    <Accordion defaultActiveKey="0"  flush>
       <Accordion.Item eventKey="0">
         <Accordion.Header>
-          <span className="animate-character">Parking Calculator</span>
+          <span>Parking Calculator</span>
         </Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Body className="text-center">
           Welcome to our Parking Cost Calculator! Estimate your semester parking
           costs by entering your daily parking hours. The app will compare these costs with a
           parking permit to find the most economical option. Customize fees and

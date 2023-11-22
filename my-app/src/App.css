@@ -53,9 +53,11 @@ body {
   color: var(--font-color) !important;
 }
 
-.nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover, .helpbtn:hover, .addremove:hover {
+.nav-link:hover, .footericon:hover, .editbtn:hover, .closebtn:hover, .helpbtn:hover, .addremove:hover{
   opacity: 0.6;
 }
+
+
 
 .helpbtn{
   cursor: pointer;
@@ -173,6 +175,9 @@ input:disabled {
   animation-duration: 1.6s;
 }
 .accordion {
+  font-size: 17px;
+  --bs-accordion-active-bg:#ffff;
+  --bs-accordion-active-color:#000;
   --bs-accordion-btn-focus-box-shadow: none;
 }
 
@@ -180,6 +185,20 @@ input:disabled {
   box-shadow: none;
 }
 
-.accordion-button{
 
+/* .accordion-button::after{
+  
+} */
+
+/* .accordion-button:not(.collapsed)::after {
+} */
+.accordion-body{
+  color: #000;
+  font-size: 17px;
+  background: linear-gradient(180deg, rgba(0, 18, 32, 0.19) 0%, #D51E3A 94.11%);
+  border: none;
+}
+
+.Mylettersp{
+  letter-spacing: 1px;
 }
