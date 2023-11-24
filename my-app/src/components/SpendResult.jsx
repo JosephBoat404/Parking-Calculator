@@ -67,7 +67,7 @@ function SpendResult({
                     type="button"
                     className="btn m-0 p-1 closebtn btn-outline-light"
                     data-bs-dismiss="modal"
-                    aria-span="Close"
+                    aria-label="Close"
                     onClick={handleClose}
                   >
                     <img src={Closebtn} alt="Close button" />
