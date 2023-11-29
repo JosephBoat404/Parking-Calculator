@@ -84,7 +84,7 @@ input[type="number"] {
 
 .formColor {
   min-width: 100px;
-  border: 1px solid;
+  border: 2px solid #941528 ;
   text-align: center;
   background-color: var(--highlight-color);
   color: black;
@@ -95,7 +95,10 @@ label {
   color: black;
 }
 
-.formColor:hover {
+.scaleanimation{
+  transition: transform 0.3s;
+}
+.scaleanimation:hover {
   transform: scale(1.1);
 }
 
@@ -197,8 +200,4 @@ input:disabled {
   font-size: 17px;
   background: linear-gradient(180deg, rgba(0, 18, 32, 0.19) 0%, #D51E3A 94.11%);
   border: none;
-}
-
-.Mylettersp{
-  letter-spacing: 1px;
 }

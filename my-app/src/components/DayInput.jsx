@@ -23,10 +23,10 @@ function DayInput({ label, hours, onChange, name, fee }) {
           <label htmlFor={name}>{label}</label>
         </div>
         <div className="col justify-content-center d-flex">
-          <div className="Mylettersp">${fee}</div>
+          <div>${fee}</div>
         </div>
         <div className="col justify-content-center d-flex">
-          <form>
+          <form className="scaleanimation"> 
             <input
               className="rounded formColor noscroll"
               type="number"

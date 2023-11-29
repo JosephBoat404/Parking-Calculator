@@ -24,25 +24,25 @@ function SpendResult({
           <tr>
             <th className="text-center ct adjfont">Weekly Hours</th>
             <td className="text-center ct">
-              <span className="Mylettersp">{totalHours}hr</span>
+              <span>{totalHours}hr</span>
             </td>
           </tr>
           <tr>
             <th className="text-center ct adjfont">Weekly Expenses</th>
             <td className="text-center ct">
-              <span className="Mylettersp">${totalMoneyToPay}</span>
+              <span>${totalMoneyToPay}</span>
             </td>
           </tr>
           <tr>
             <th className="text-center ct adjfont">Semester Expenses</th>
             <td className="text-center ct">
-              <span className="Mylettersp">${totalCostForSemester}</span>
+              <span>${totalCostForSemester}</span>
             </td>
           </tr>
           <tr>
             <th className="text-center ct adjfont">Savings</th>
             <td className="text-center ct">
-              <span className="Mylettersp">${savingsAmount}</span>
+              <span>${savingsAmount}</span>
             </td>
           </tr>
           <tr>
