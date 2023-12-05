@@ -55,7 +55,7 @@ function SpendResult({
               <button className="mybtn" onClick={handleShow}>
                 <img
                 src={helpicon}
-                alt="help icon"
+                alt="Help icon"
                 className="helpbtn"
                 title="Click to See Why"
               /></button>

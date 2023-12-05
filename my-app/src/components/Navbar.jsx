@@ -64,7 +64,7 @@ function Navbar({ handleShowModal }) {
           <img
             className="imgstyled"
             src={Editbtn}
-            alt="Edit"
+            alt="Edit Rate"
           />
           Edit Rate
         </Button>

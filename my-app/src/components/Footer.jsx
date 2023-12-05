@@ -24,7 +24,7 @@ function Footer() {
                 >
                   <img
                     src={GithubIcon}
-                    alt="SVG as an "
+                    alt="Github web "
                     className="border border-1 p-1 rounded footericon"
                   />
                 </a>
@@ -38,7 +38,7 @@ function Footer() {
                 >
                   <img
                     src={TwitterIcon}
-                    alt="SVG as an "
+                    alt="Twitter web"
                     className="border border-1 p-1 rounded footericon"
                   />
                 </a>
@@ -52,7 +52,7 @@ function Footer() {
                 >
                   <img
                     src={linkedinIcon}
-                    alt="SVG as an "
+                    alt="Linkedin Web"
                     className="border border-1 p-1 rounded footericon"
                   />
                 </a>
