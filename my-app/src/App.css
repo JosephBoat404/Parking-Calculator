@@ -173,6 +173,14 @@ input:disabled {
   100% {opacity: 1;}
 }
 
+.editbtn {
+  margin-left: auto;
+  align-self: center;
+}
+.imgstyled{
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
 .fade-in {
   animation-name: fadeIn;
   animation-duration: 1.6s;
@@ -200,4 +208,11 @@ input:disabled {
   font-size: 17px;
   background: linear-gradient(180deg, rgba(0, 18, 32, 0.19) 0%, #D51E3A 94.11%);
   border: none;
+}
+
+@media (max-width: 768px) {
+  .accordion-body {
+    max-height: 100px;
+    overflow-y: auto; 
+  }
 }

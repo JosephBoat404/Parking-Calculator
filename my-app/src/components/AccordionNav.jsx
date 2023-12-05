@@ -1,8 +1,19 @@
 import Accordion from "react-bootstrap/Accordion";
+import { useState, useEffect } from 'react';
 
 function AccordionNav() {
+  const [activeKey, setActiveKey] = useState('0');
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActiveKey(null); // Set to null to deactivate the accordion
+    }, 6000); // Set to 5 seconds
+
+    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+  }, []);
+
   return (
-    <Accordion defaultActiveKey="0"  flush>
+    <Accordion activeKey={activeKey} onSelect={(key) => setActiveKey(key)} flush>
       <Accordion.Item eventKey="0">
         <Accordion.Header>
           <span>Parking Calculator</span>
