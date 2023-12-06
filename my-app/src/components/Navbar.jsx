@@ -76,8 +76,8 @@ function Navbar({ handleShowModal }) {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Montclair State</Dropdown.Item>
-            <Dropdown.Item disabled  href="#/action-2">Coming soon</Dropdown.Item>
+            <Dropdown.Item active>Montclair State</Dropdown.Item>
+            <Dropdown.Item disabled >Coming soon</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>

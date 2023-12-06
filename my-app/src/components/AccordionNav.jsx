@@ -6,10 +6,10 @@ function AccordionNav() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setActiveKey(null); // Set to null to deactivate the accordion
-    }, 6000); // Set to 5 seconds
+      setActiveKey(null);
+    }, 9000); 
 
-    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+    return () => clearTimeout(timer);
   }, []);
 
   return (

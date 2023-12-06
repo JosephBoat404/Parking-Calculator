@@ -1,5 +1,7 @@
 import { Modal } from "react-bootstrap";
 import Closebtn from "../Icons/closebtn.svg";
+import TrashIcon from "../Icons/TrashIcon.svg";
+import AddMoreInput from "../Icons/AddMoreInput.svg";
 
 function FeeInput({
   fees,
@@ -16,8 +18,6 @@ function FeeInput({
   const handleChange = (event, index) => {
     const { name, value } = event.target;
     const newFees = [...fees];
-
-    // Validate and update the state based on the input field name
     if (
       (name === "maxHours" && (value === "" || (value <= 24 && !isNaN(value)))) ||
       (name === "fee" && (value === "" || !isNaN(value)))
@@ -29,12 +29,9 @@ function FeeInput({
 
   const handleBlur = (event, index) => {
     const { name, value } = event.target;
-
-    // Check for duplicate values in the fees array
     const isDuplicate = fees.some(
       (fee, i) => i !== index && fee[name] === parseFloat(value)
     );
-
     if (isDuplicate) {
       alert("Duplicate number is not allowed.");
       const newFees = [...fees];
@@ -42,34 +39,24 @@ function FeeInput({
       setFees(newFees);
     }
   };
-
   const handleMaxHourChange = (event) => {
     const value = event.target.value;
-
-    // Validate and update the state for maxHour
     if (value === "" || !isNaN(value)) {
       setMaxHour(value === "" ? "" : Number(value));
     }
   };
-
   const handlePermitAmountChange = (event) => {
     const value = event.target.value;
-
-    // Validate and update the state for PermitAmount
     if (value === "" || !isNaN(value)) {
       SetPermitAmount(value === "" ? "" : Number(value));
     }
   };
-
   const handleWeeksChange = (event) => {
     const value = event.target.value;
-
-    // Validate and update the state for numberOfWeeksInSemester
     if (value === "" || !isNaN(value)) {
       SetnumberOfWeeksInSemester(value === "" ? "" : Number(value));
     }
   };
-
   const handleAddFee = () => {
     setFees([...fees, { maxHours: "", fee: "" }]);
   };
@@ -94,13 +81,14 @@ function FeeInput({
               className="btn btn-outline-light addremove m-1"
               onClick={handleRemoveFee}
             >
-              Remove
+              <img src={TrashIcon} alt="Remove" />
             </button>
             <button
               className="btn btn-outline-light addremove m-1"
               onClick={handleAddFee}
             >
-              Add
+              <img src={AddMoreInput} alt="Add" />
+              
             </button>
             <button
               type="button"

@@ -142,8 +142,6 @@ td.text-center.ct label {
   color: var(--font-color) !important;
 }
 
-
-
 .custom-navbar-toggler {
   border: 1px solid var(--font-color) !important;
 }
@@ -196,13 +194,6 @@ input:disabled {
   box-shadow: none;
 }
 
-
-/* .accordion-button::after{
-  
-} */
-
-/* .accordion-button:not(.collapsed)::after {
-} */
 .accordion-body{
   color: #000;
   font-size: 17px;
@@ -216,3 +207,9 @@ input:disabled {
     overflow-y: auto; 
   }
 }
+.dropdown-item.active {
+  background: none;
+  color: #000;
+  text-decoration: underline;
+}
+
