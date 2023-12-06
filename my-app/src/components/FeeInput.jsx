@@ -1,4 +1,5 @@
 import { Modal } from "react-bootstrap";
+import React, { useState } from "react";
 import Closebtn from "../Icons/closebtn.svg";
 import TrashIcon from "../Icons/TrashIcon.svg";
 import AddMoreInput from "../Icons/AddMoreInput.svg";
@@ -15,6 +16,7 @@ function FeeInput({
   showModal,
   handleCloseModal,
 }) {
+  const [isSaved, setIsSaved] = useState(false);
   const handleChange = (event, index) => {
     const { name, value } = event.target;
     const newFees = [...fees];
@@ -25,6 +27,8 @@ function FeeInput({
       newFees[index][name] = value === "" ? "" : parseFloat(value);
       setFees(newFees);
     }
+    setIsSaved(false);
+    showSavedMessage();
   };
 
   const handleBlur = (event, index) => {
@@ -38,6 +42,7 @@ function FeeInput({
       newFees[index][name] = ""; // Reset the value
       setFees(newFees);
     }
+
   };
   const handleMaxHourChange = (event) => {
     const value = event.target.value;
@@ -70,13 +75,24 @@ function FeeInput({
       alert("You cannot remove the existing form.");
     }
   };
+  const showSavedMessage = () => {
+    setIsSaved(true);
+    // Automatically hide the "Saved..." message after 2000 milliseconds (2 seconds)
+    setTimeout(hideSavedMessage, 2000);
+  };
+  const hideSavedMessage = () => {
+    setIsSaved(false);
+  };
 
   return (
     <div>
       <Modal show={showModal} onHide={handleCloseModal} centered>
         <Modal.Header className="d-flex justify-content-between align-items-center p-2">
           <Modal.Title>Edit Rate</Modal.Title>
+
           <div>
+          {isSaved && <span className="text-success btn btn-outline-light">Saved</span>}
+            
             <button
               className="btn btn-outline-light addremove m-1"
               onClick={handleRemoveFee}
