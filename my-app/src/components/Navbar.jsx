@@ -37,7 +37,7 @@ function Navbar({ handleShowModal }) {
             </li>
             <li className="nav-item">
               <a
-                className="nav-link active"
+                className="nav-link"
                 aria-current="page"
                 href="#footer"
               >
@@ -46,7 +46,7 @@ function Navbar({ handleShowModal }) {
             </li>
             <li className="nav-item">
               <Link
-                className="nav-link active"
+                className="nav-link"
                 aria-current="page"
                 to="/Help"
               >

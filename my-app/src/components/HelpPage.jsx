@@ -16,12 +16,12 @@ function HelpPage() {
         </p>
         <p>Follow these steps to get started:</p>
         <ol>
-          <li>For each day, input the hours you expect to spend on parking.</li>
+          <li>For each day, input the hours you expect to spend on parking or specify the start and end times for parking.</li>
           <li>Review the results at the bottom of the page.</li>
           <li>
             You can enter your desired parking rate, permit amount, and expected
             number of weeks you will be parking. Instructions are in the{" "}
-            <a href="#EditRateSection">Editing Rate section.</a>
+            <a href="#EditRateSection">Editing Rate Section.</a>
           </li>
         </ol>
       </section>

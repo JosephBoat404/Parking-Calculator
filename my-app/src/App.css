@@ -82,14 +82,7 @@ input[type="number"] {
   color: var(--font-color);
 }
 
-.formColor {
-  min-width: 100px;
-  border: 2px solid #941528 ;
-  text-align: center;
-  background-color: var(--highlight-color);
-  color: black;
-  transition: transform 0.3s;
-}
+
 
 label {
   color: black;
@@ -207,9 +200,55 @@ input:disabled {
     overflow-y: auto; 
   }
 }
-.dropdown-item.active {
+.nodefualt{
   background: none;
-  color: #000;
-  text-decoration: underline;
+  border: none;
+  text-align: center;
 }
 
+.IsTo{
+  /* font-weight: bolder; */
+  font-size: 20px;
+}
+
+.hoursdisplay{
+  width: max-content;
+  height: 35.5px;
+  border: 2px solid #941528;
+  text-align: center;
+  margin: 1px;
+  background:var(--highlight-color);
+  color: black;
+  transition: transform 0.3s;
+}
+
+.formChange{
+  width:max-content;
+  border: 2px solid #941528 ;
+  text-align: center;
+  background-color: var(--highlight-color);
+  color: black;
+  transition: transform 0.3s;
+
+}
+
+.PMAM{
+  border: 2px solid #941528 ;
+  background: #941528;
+  width: auto;
+}
+
+@media (max-width: 576px) { 
+  .formChange {
+    display: none;
+  }
+  .IsTo{
+    display: none !important;
+  }
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #000;
+  background: none;
+  text-shadow: 2px 2px 5px #941528;
+}
