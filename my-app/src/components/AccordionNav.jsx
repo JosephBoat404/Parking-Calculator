@@ -3,20 +3,33 @@ import { useState, useEffect } from 'react';
 
 function AccordionNav() {
   const [activeKey, setActiveKey] = useState('0');
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setActiveKey(null);
-    }, 9000); 
+    }, 15000); 
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <Accordion activeKey={activeKey} onSelect={(key) => setActiveKey(key)} flush>
       <Accordion.Item eventKey="0">
         <Accordion.Header>
-          <span>Parking Calculator</span>
+          <span>{windowWidth <= 576 ? "Use Desktop to Access Full Page" : "Parking Calculator"}</span>
         </Accordion.Header>
         <Accordion.Body className="text-center">
           Welcome to our Parking Cost Calculator! Estimate your semester parking

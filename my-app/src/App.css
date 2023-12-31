@@ -233,10 +233,14 @@ input:disabled {
 }
 
 .PMAM{
-  border: 2px solid #941528 ;
-  background: #941528;
+  border: 2px solid #941528;
+  border-top:none;
+  border-right:none;
+  background: linear-gradient(180deg, #D51E3A 56.78%, #941528 100%);
   width: auto;
+  color: black;
 }
+
 
 @media (max-width: 576px) { 
   .formChange {
@@ -244,6 +248,10 @@ input:disabled {
   }
   .IsTo{
     display: none !important;
+  }
+
+  .hoursdisplay{
+    width: 100px;
   }
 }
 
