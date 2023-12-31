@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Parking-Calculator/static/css/main.a8b59f41.css",
+    "main.js": "/Parking-Calculator/static/js/main.a7d4efcf.js",
+    "index.html": "/Parking-Calculator/index.html",
+    "static/media/helpicon.svg": "/Parking-Calculator/static/media/helpicon.3df59bbeaac76c3f0bc2291d39163c50.svg",
+    "static/media/square-github.svg": "/Parking-Calculator/static/media/square-github.0a130232a52e9cb58423e576b2d05cc7.svg",
+    "static/media/linkedin.svg": "/Parking-Calculator/static/media/linkedin.396778b7f28164a21fb71f41c95a4eb6.svg",
+    "static/media/GraduateIcon.svg": "/Parking-Calculator/static/media/GraduateIcon.47fbf32b79c129513fb36b1a6769b48d.svg",
+    "static/media/Addparking.svg": "/Parking-Calculator/static/media/Addparking.922982de3951731e0269e927a3ed355c.svg",
+    "static/media/TrashIcon.svg": "/Parking-Calculator/static/media/TrashIcon.fd62d0ef2d25382c926f8efae0662ad3.svg",
+    "static/media/navtoggler.svg": "/Parking-Calculator/static/media/navtoggler.6f010ec0a29e056b62c4dc4911cb2a08.svg",
+    "static/media/closebtn.svg": "/Parking-Calculator/static/media/closebtn.f4030aec89c7f956988e5b54077b7245.svg",
+    "static/media/square-x-twitter.svg": "/Parking-Calculator/static/media/square-x-twitter.f06c2fe041d10cda974cd5a55faa3b30.svg",
+    "static/media/AddMoreInput.svg": "/Parking-Calculator/static/media/AddMoreInput.54e3e0896c0feb9621d727ab019c831f.svg",
+    "main.a8b59f41.css.map": "/Parking-Calculator/static/css/main.a8b59f41.css.map",
+    "main.a7d4efcf.js.map": "/Parking-Calculator/static/js/main.a7d4efcf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8b59f41.css",
+    "static/js/main.a7d4efcf.js"
+  ]
+}

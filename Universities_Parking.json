@@ -1,0 +1,17 @@
+{
+  "universities": [
+    {
+      "name": "Montclair State University",
+      "Permit_Is_Required": false,
+      "parkingRates": [
+        { "maxHours": 0, "fee": 0 },
+        { "maxHours": 1, "fee": 2 },
+        { "maxHours": 2, "fee": 4 },
+        { "maxHours": 6, "fee": 8 },
+        { "maxHours": 8, "fee": 10 }
+      ],
+      "permitAmount": 260,
+      "weeks":16
+    }
+  ]
+}
