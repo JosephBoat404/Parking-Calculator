@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, HashRouter as Router } from "react-router-dom";
 import "./App.css";
 import ParentComponent from "./components/ParentComponent.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -27,7 +27,7 @@ function App() {
       <Navbar handleShowModal={handleShowModal} />
       <Routes>
         <Route
-          path="/Parking-Calculator/"
+          path="/"
           element={
             <ParentComponent
               handleCloseModal={handleCloseModal}
@@ -38,7 +38,7 @@ function App() {
             />
           }
         />
-        <Route path="/Parking-Calculator/Help" element={<HelpPage />} />
+        <Route path="/Help" element={<HelpPage />} />
       </Routes>
       <Footer />
     </>

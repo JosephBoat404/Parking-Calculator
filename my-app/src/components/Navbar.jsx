@@ -2,8 +2,7 @@ import React from "react";
 import Editbtn from "../Icons/Addparking.svg";
 import navtoggler from "../Icons/navtoggler.svg";
 import GraduateIcon from "../Icons/GraduateIcon.svg";
-import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 
