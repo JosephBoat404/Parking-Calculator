@@ -27,7 +27,7 @@ function App() {
       <Navbar handleShowModal={handleShowModal} />
       <Routes>
         <Route
-          path="/"
+          path="/Parking-Calculator/"
           element={
             <ParentComponent
               handleCloseModal={handleCloseModal}
@@ -38,7 +38,7 @@ function App() {
             />
           }
         />
-        <Route path="/Help" element={<HelpPage />} />
+        <Route path="/Parking-Calculator/Help" element={<HelpPage />} />
       </Routes>
       <Footer />
     </>
