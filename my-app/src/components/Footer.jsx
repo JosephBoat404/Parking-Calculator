@@ -46,7 +46,7 @@ function Footer() {
               <li className="ms-3">
                 <a
                   className="text-body-secondary"
-                  href="https://www.linkedin.com/in/joseph-boateng-a68750261/"
+                  href="https://www.linkedin.com/in/josephboat"
                   target="_blank"
                   rel="noreferrer"
                 >
