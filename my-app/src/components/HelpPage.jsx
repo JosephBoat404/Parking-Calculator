@@ -17,6 +17,7 @@ function HelpPage() {
         <p>Follow these steps to get started:</p>
         <ol>
           <li>For each day, input the hours you expect to spend on parking or specify the start and end times for parking.</li>
+          <li>You can directly enter the hours in the first input form</li>
           <li>Review the results at the bottom of the page.</li>
           <li>
             You can enter your desired parking rate, permit amount, and expected

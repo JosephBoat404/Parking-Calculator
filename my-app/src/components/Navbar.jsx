@@ -9,6 +9,9 @@ import Button from "react-bootstrap/Button";
 function Navbar({ handleShowModal }) {
   const location = useLocation();
   const isHelpPage = location.pathname === "/Help";
+  const scrollToBottom = () => {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
@@ -38,7 +41,7 @@ function Navbar({ handleShowModal }) {
               <a
                 className="nav-link"
                 aria-current="page"
-                href="#footer"
+                onClick={scrollToBottom}
               >
                 Contact
               </a>

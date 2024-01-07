@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Route, Routes, HashRouter as Router } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Route, Routes, useLocation, HashRouter as Router } from "react-router-dom";
 import "./App.css";
 import ParentComponent from "./components/ParentComponent.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -21,6 +21,11 @@ function App() {
     setFees(newFees);
     setShowModal(false);
   };
+
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <>
