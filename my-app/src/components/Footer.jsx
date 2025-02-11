@@ -10,7 +10,7 @@ function Footer() {
           <footer className="d-flex flex-wrap justify-content-between align-items-center py-5 ">
             <div className="col-md-4 d-flex align-items-center">
               <span className="mb-3 mb-md-0 text-white border rounded p-1">
-                &copy; 2025 Joseph
+                &copy; 2025 Joseph Boateng
               </span>
             </div>
 
